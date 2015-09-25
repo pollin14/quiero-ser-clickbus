@@ -1,0 +1,15 @@
+#!/usr/bin/php
+
+<?php
+
+require_once(__DIR__ . '/../vendor/autoload.php');
+
+use Pollin14\QuieroSerClickbus\CashMachine\CashMachine;
+
+$amount = intval($argv[1]);
+
+$cashMachine = new CashMachine();
+
+$cash = $cashMachine->withdraw($amount);
+
+echo '[' . implode($cash, ', ') . "]\n" ;
